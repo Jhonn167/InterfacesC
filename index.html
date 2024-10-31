@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuzzy Martian's Lair</title>
+    <style>
+        /* Estilos del contenedor de la cabecera */
+        .header {
+            text-align: center;
+            padding: 20px;
+            background-color: #336699; /* Azul cálido */
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        /* Estilos básicos del menú */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #2b5d8a; /* Azul intermedio */
+            padding: 10px 0;
+        }
+
+        .menu li {
+            position: relative;
+        }
+
+        .menu > li > a {
+            display: block;
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+        }
+
+        .menu > li > a:hover {
+            background-color: #4682b4; /* Azul claro */
+        }
+
+        /* Estilos de las secciones */
+        .content-section {
+            display: none;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #aad3e3; /* Fondo azul claro */
+            border: 1px solid #b0c4de; /* Borde azul suave */
+            border-radius: 5px;
+            color: #333;
+        }
+
+        /* Estilos para la infografía */
+        #infografia {
+            display: block;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            justify-content: center; /* Centrar contenido */
+            align-items: center; /* Alinear verticalmente */
+            gap: 20px; /* Espacio entre imagen e infografía */
+        }
+
+        /* Estilos de la imagen */
+        #infografia img {
+            max-width: 300px; /* Ajusta el tamaño de la imagen */
+            height: auto;
+        }
+
+        /* Estilos de la infografía */
+        .infographic {
+            max-width: 400px; /* Ajusta el tamaño de la infografía */
+            height: auto;
+        }
+
+        /* Estilos del formulario de contacto */
+        .contact-form label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #b0c4de;
+            border-radius: 4px;
+            background-color: #f0f8ff; /* Azul suave */
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #2b5d8a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .contact-form button:hover {
+            background-color: #336699;
+        }
+
+        /* Estilos del menú de categorías de poemas */
+        .poem-categories ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .poem-categories li {
+            margin: 10px 0;
+        }
+
+        .poem-categories a {
+            color: #336699;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .poem-categories a:hover {
+            text-decoration: underline;
+        }
+
+        /* Estilos de los poemas */
+        .poem-list {
+            display: none;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .poem-list li {
+            margin: 8px 0;
+        }
+
+        .poem-list a {
+            color: #4682b4;
+            text-decoration: none;
+        }
+
+        .poem-list a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #b0c4de;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function mostrarSeccion(seccion) {
+            document.getElementById("infografia").style.display = "none";
+            document.getElementById("contact").style.display = "none";
+            document.getElementById("poema").style.display = "none";
+            document.getElementById("tutorial").style.display = "none";
+
+            document.getElementById(seccion).style.display = "block";
+        }
+
+        function togglePoemList(category) {
+            const allPoemLists = document.querySelectorAll('.poem-list');
+            allPoemLists.forEach(list => list.style.display = 'none');
+
+            const selectedList = document.getElementById(category);
+            selectedList.style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        Fuzzy Martian's Lair
+    </div>
+
+    <ul class="menu">
+        <li><a href="#" onclick="mostrarSeccion('infografia')">Inicio</a></li>
+        <li><a href="#" onclick="mostrarSeccion('poema')">Poema</a></li>
+        <li><a href="#" onclick="mostrarSeccion('contact')">Contáctame</a></li>
+        <li><a href="#" onclick="mostrarSeccion('tutorial')">Tutorial</a></li>
+    </ul>
+
+    <div id="infografia" class="content-section">
+        <div style="display: flex; align-items: flex-start;">
+            <img src="/img/gettyimages-1144373719_41854331_20230303123108.jpg" alt="Imagen" style="max-width: 300px; height: auto; margin-right: 20px;">
+            <div>
+                <h2>Ida Vitale</h2> <!-- Nombre a la derecha de la imagen -->
+                <p>Ida Vitale (Montevideo, 2 de noviembre de 1923- ). Poeta y escritora uruguaya.
+                    Pertenece a la misma generación de escritores uruguayos que Juan Carlos Onetti e Idea Vilariño, la Generación del 45. Destaca por sus labores realizadas en el campo de la crítica literaria, traducción, poesía, ensayo y enseñanza.
+                    Se licencia en Humanidades en Uruguay, lo que da paso a una etapa como profesora y colaboraciones en diversas revistas como Marcha, Asir, La Licorne, Época, Clinamen y Maldoror, en estas dos últimas realizando labores de dirección.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Poema con categorías -->
+    <div id="poema" class="content-section">
+        <div class="section-title">Pick a Section</div>
+        <div class="poem-categories">
+            <ul>
+                <li><a href="#" onclick="togglePoemList('cosmos')">A Dance Through the Cosmos</a></li>
+                <li><a href="#" onclick="togglePoemList('path')">Off the Beaten Path</a></li>
+                <li><a href="#" onclick="togglePoemList('fantasy')">A Good Dose of Fantasy</a></li>
+                <li><a href="#" onclick="togglePoemList('nature')">In Appreciation of Nature</a></li>
+                <li><a href="#" onclick="togglePoemList('soul')">Into the Tortured Soul</a></li>
+                <li><a href="#" onclick="togglePoemList('friendship')">Poems of Friendship and Love</a></li>
+                <li><a href="#" onclick="togglePoemList('inspiration')">Lights of Inspiration</a></li>
+            </ul>
+        </div>
+
+        <ul id="cosmos" class="poem-list">
+            <li><a href="#cosmos1">The Great Symphony of Life</a></li>
+            <li><a href="#cosmos2">Sugar Structures</a></li>
+            <li><a href="#cosmos3">The Star-filled Night</a></li>
+            <li class="back-link" onclick="togglePoemList('')">Back to Index</li>
+        </ul>
+
+        <!-- (Continúan listas de otros poemas como en el ejemplo anterior) -->
+    </div>
+
+    <div id="contact" class="content-section contact-form">
+        <h1>Contáctame</h1>
+
+        <form action="enviar_email.php" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <div id="tutorial" class="content-section">
+        <h2>Tutorial</h2>
+        <p>Aquí puedes incluir contenido relacionado con tutoriales.</p>
+    </div>
+</body>
+</html>
